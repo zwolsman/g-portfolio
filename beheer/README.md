@@ -28,7 +28,16 @@ Er is een `README.md` in de repository waar benodigde informatie in staat van de
 
 ### Pipelines
 
+Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behalen. De 2 doelen die ik heb binnen mijn project zijn het bouwen van de applicatie en het releasen (deployen) van de applicatie in de Azure Cloud. Hier zijn dus 2 pipelines voor opgezet.
+
 #### Build
+
+De build pipeline doet een 4-tal taken.
+
+1. Source code ophalen (een git checkout)
+2. Gradle wrapper starten met de taak `bootWar`, deze bouwt een `war` archief die gebruikt wordt in Azure.
+3. De files kopieren die `/build/libs/*.*` en `src/main/resources/*.sql` matchen, dit is de `ROOT.war` en de `schema.sql`. Deze worden als artifact gezien.
+4. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip` die gebruikt kan worden in de releae pipeline.
 
 #### Release
 
