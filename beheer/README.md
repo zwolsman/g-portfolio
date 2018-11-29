@@ -41,6 +41,15 @@ De build pipeline doet een 4-tal taken.
 
 #### Release
 
+Releasen is de artifact online zetten, in mijn geval op productie. De productie server is een Azure Web Service. Je geeft aan welke artifacts er gebruikt worden en van welke build. Dan heb ik 1 stage, de deploy stage. Deze bestaat uit meerdere taken; de taken zijn:
+
+1. Stop de App Service
+2. Gebruik het `schema.sql` script om de database in te richten
+3. Deploy de war naar de (gestopte) App Service
+4. Start de App Service
+
+Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-api.azurewebsites.net/actuator/info)
+
 ## Swagger
 
 ## Actuator
