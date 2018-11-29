@@ -24,6 +24,8 @@ Om het inzichtelijk te maken naar andere mensen toe wat ik aan het doen ben heb 
 
 ### Readme
 
+Er is een `README.md` in de repository waar benodigde informatie in staat van de applicatie. Welke configuratie er allemaal is, of de build lukt en hoe je hem moet starten.
+
 ### Pipelines
 
 #### Build
