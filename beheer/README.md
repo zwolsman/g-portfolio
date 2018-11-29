@@ -52,4 +52,6 @@ Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een 
 
 ## Swagger
 
+Om de API inzichtelijk te maken naar andere ontwikkelaars toe heb ik gekozen voor Swagger. Dit is een user interface met informatie over de API's, welke parameters, waar ze staan en wat de modellen zijn die ze returnen. Je kan ook in plaats alles proberen (in de browser). Hier zie je de volgende controllers: `WebController`, `CoreController`, `SlackController` en de `FacebookController`.
+
 ## Actuator
