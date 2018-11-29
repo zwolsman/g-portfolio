@@ -14,6 +14,14 @@ De repository heeft een `master` branch, deze heeft een volledig werkende versie
 
 ### Dashboard
 
+Om het inzichtelijk te maken naar andere mensen toe wat ik aan het doen ben heb ik een dashboard ingericht. Dit dashboard bestaat uit verschillende blokjes. De blokjes die ik heb ingericht zijn:
+
+- Taak overzicht, welke taken ik daadwerkelijk mee bezig ben
+- Build statussen (gefaald of niet)
+- Release statussen (Welke release er nu live is)
+- Een lijst van commando's en waar je de Swagger kan vinden
+- Hoe de applicatie opgebouwd is en in elkaar steekt met uitleg.
+
 ### Readme
 
 ### Pipelines
