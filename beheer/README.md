@@ -55,3 +55,29 @@ Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een 
 Om de API inzichtelijk te maken naar andere ontwikkelaars toe heb ik gekozen voor Swagger. Dit is een user interface met informatie over de API's, welke parameters, waar ze staan en wat de modellen zijn die ze returnen. Je kan ook in plaats alles proberen (in de browser). Hier zie je de volgende controllers: `WebController`, `CoreController`, `SlackController` en de `FacebookController`.
 
 ## Actuator
+
+Actuator wordt gebruikt om interne informatie over de applicatie beschikbaar te stellen aan de buitenwereld. Ik heb informatie over de versie onder het `/info` endpoint, over de envirnment variables op de `/env` en over de health op de `/health` endpoint.
+
+Het info endpoint bevat informatie over de build. Hieronder zie je een voorbeeld.
+
+```json
+{
+  "build": {
+    "version": "1.0.0.02106f9",
+    "artifact": "bbb-api",
+    "name": "bbb-api",
+    "group": "com.infosupport",
+    "time": "2018-10-31T12:06:21.104Z"
+  }
+}
+```
+
+De environment kan je de variables zien die gebruikt worden. Secrets en wachtworden worden gemaskt met \*\*\*. Hier kan je dus zien welke daadwerkelijk configuratie er gebruikt wordt en waar die vandaan komt (process argument, properties file, etc.). Door dit inzichtelijk te maken weet je zeker welke waardes er gebruikt worden op productie.
+
+De health endpoint is om te zien of de applicatie werkt na behoren. Als dit niet zo is zal hier `status: down` komen te staan met een eventuele reden (database niet bereikbaar o.i.d.).
+
+```json
+{
+  "status": "UP"
+}
+```
