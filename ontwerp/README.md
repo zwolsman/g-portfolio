@@ -12,11 +12,24 @@ Na de eerste iteratie had ik nieuwe inzichten. Er moet rekening gehouden worden 
 
 ## Derde iteratie
 
-Micro services
+Na de feedback van collega's heb ik nog eens na zitten denken. De afspraken die ik nu had gemaakt die een service _moest_ implementeren waren vast. Elke andere manier zou dus niet ondersteund worden. Deze afspraken kan ik ook in het HTTP protocol vastleggen i.p.v. in Java Interfaces. Dit was dus de derde iteratie.
 
-<!-- Ontwerp
-•	Vorm en inhoud passend bij opdracht en context
-•	Aansluitend bij analyse en advies en voldoende uitgewerkt voor realisatie
-Extra uitleg
-•	De belangrijkste ontwerpbesluiten zijn onderbouwd.
-  -->
+De applicatie bestaat nu uit 4 services.
+
+- Core
+
+  De core service is de enige die weet dat er uberhaupt sprake is van een blockchain. Deze heeft contact met het smart contract en kan informatie uit de blockchain halen. Deze is beveiligd met OAuth2. Je moet een `clientId` en `clientSecret` hebben die geregistreerd is om toegang te hebben. Ook heeft deze service als enige de private key voor de wallet die toegestaan is voor interactie met het smart contract.
+
+- Web
+
+  De web service is een tussen service tussen een web interface en het core project. Deze heeft dus een valide `clientId` en `clientSecret` om functies aan te roepen. Deze is ook OAuth beschermd en zal dus alleen ingelogde gebruikers toestaan. Deze gebruikers zullen geauthoriseerd worden via de Azure Active Directory.
+
+- Slack
+
+  Dit is een losstaand project van de rest. Deze is verantwoordelijk voor de integratie met Slack. Op het moment ondersteund die slash commando's en interactieve knoppen.
+
+  Gebaseerd op input Slack worden er acties ondernomen. Bij een `/give` commando wordt er een bonus gegeven en zodra deze is gegeven wordt er een berichtje gestuurd naar de gebruiker dat het verwerkt is. Ook als de gebruiker op de interactieve knoppen klikt voor de vorige/volgende pagina van bonussen.
+
+- Facebook
+
+  Dit is een proof of concept service. Deze is om aan te tonen hoe een andere implementatie eruit ziet. Het laat zien hoe er omgegaan wordt met lokale user id's en hoe de core service aangeroepen wordt.
