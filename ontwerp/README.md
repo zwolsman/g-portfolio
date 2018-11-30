@@ -4,7 +4,7 @@ Door de ASD project methode is de applicatie gaande tijd veranderd. Dit is omdat
 
 ## Eerste iteratie
 
-Dit was de eerste iteratie. Het was een `Controller` met een endpoint voor de Slack webhook. Deze functie riep dan functies aan op de Blockchain waardoor er problemen waren met de time-out's. Een van de randvoorwaardes van Slack is dat er binnen 3 seconde een response verstuurd moet worden.
+Dit was de eerste iteratie. Het was een `Controller` met een endpoint voor de Slack webhook. Deze functie riep dan functies aan op de Blockchain waardoor er problemen waren met de time-out's. Een van de randvoorwaardes van Slack is dat er binnen 3 seconde een reactie verstuurd moet worden. Deze reactie wordt dan naar de gene gestuurd die het commando heeft aangeroepen. Omdat de Blockchain langer doet over verwerken van data door de decentralized nature moet dit dus asynchroon opgelost worden. Dit voegde al snel veel complexiteit toe aan de applicatie. In deze iteratie was hier nog geen rekening mee gehouden.
 
 ## Tweede iteratie
 
