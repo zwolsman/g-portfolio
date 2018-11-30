@@ -37,3 +37,17 @@ De applicatie bestaat nu uit 4 services.
 - Facebook
 
   Dit is een proof of concept service. Deze is om aan te tonen hoe een andere implementatie eruit ziet. Het laat zien hoe er omgegaan wordt met lokale user id's en hoe de core service aangeroepen wordt.
+
+## IMG folder
+
+### Architectuur-1
+
+Dit is een class diagram van de architectuur. Hier zie je veel inheritence en daardoor was die zeer beperkt. Het SOLID principe kwam hier niet tot zijn recht, met name het _Single Responsiblity_ gedeelte niet.
+
+### Architectuur-2
+
+Hier kwam de _Single Responiblity_ al meer naar voren. Er is een aparte service die reageert (`ServiceResponder`) echter zie je nog steeds dat de `...CommandContext` nog steeds 2 interfaces implementeert. Inheritence is hier nog steeds erg prominent aanwezig.
+
+### Architectuur-3
+
+Dit is de architectuur de het beste de SOLID principes aanhoud. Alles heeft maar 1 parent en is daadwerkelijk verantwoordelijk voor 1 ding, _Single Responiblity_!
