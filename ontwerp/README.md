@@ -8,7 +8,7 @@ Dit was de eerste iteratie. Het was een `Controller` met een endpoint voor de Sl
 
 ## Tweede iteratie
 
-Abstractie laag voor generieke implementatie van een chat service - Facebook
+Na de eerste iteratie had ik nieuwe inzichten. Er moet rekening gehouden worden met asynchrone code. Deze logica wil je niet in de `Controller`, ik heb dus een `Service` aangemaakt. Deze service heeft de logica voor het afhandelen van een chat service en de asynchrone code. Ook is er een abstractie laag toegevoegd. Een service moet een interface implementeren zodat het systeem er zeker van weet dat die dit kan afhandelen. Na deze iteratie werkende het systeem en was het uitbreidbaar, toch voelde het niet helemaal goed. Omdat de vraag kwam vanuit de `PO` om de commando's ook via een REST-interface te exposen moest er dus synchrone code in een asynchrone manier verwerkt worden. Dit begon te wringen en vroeg ik dus om feedback aan collega's.
 
 ## Derde iteratie
 
