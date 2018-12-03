@@ -8,11 +8,15 @@ Azure DevOps is een omgeving waar alle tooling bij elkaar komt voor je project b
 
 ### Git
 
+![Git IMG](./img/git.png)
+
 Het versiebeheersysteem wat gebruikt is heet Git. Dit is een decentrelized manier van versiebeheer. In Azure DevOps heb je verschillende repositories (BBB - Hoofd applicatie en proof of concepts).
 
 De repository heeft een `master` branch, deze heeft een volledig werkende versie ten aller tijden. Elke feature wordt een nieuwe branch gebaseerd op de `master`. Uiteindelijk wordt er een pull request (`PR`) gemaakt. Deze PR wordt gecontroleerd en gemerged in de `master`. Deze wordt dan automatisch gebuild. Zie Pipelines/Build.
 
 ### Dashboard
+
+![Dashboard IMG](./img/dashboard.png)
 
 Om het inzichtelijk te maken naar andere mensen toe wat ik aan het doen ben heb ik een dashboard ingericht. Dit dashboard bestaat uit verschillende blokjes. De blokjes die ik heb ingericht zijn:
 
@@ -24,6 +28,8 @@ Om het inzichtelijk te maken naar andere mensen toe wat ik aan het doen ben heb 
 
 ### Readme
 
+![Readme IMG](./img/readme.png)
+
 Er is een `README.md` in de repository waar benodigde informatie in staat van de applicatie. Welke configuratie er allemaal is, de build geschiedenis en hoe je de applicatie moet starten.
 
 ### Pipelines
@@ -31,6 +37,8 @@ Er is een `README.md` in de repository waar benodigde informatie in staat van de
 Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behalen. De 2 doelen die ik heb binnen mijn project zijn het bouwen van de applicatie en het releasen (deployen) van de applicatie in de Azure Cloud. Hier zijn dus 2 pipelines voor opgezet.
 
 #### Build
+
+![Build pipeline IMG](./img/pipeline/build.png)
 
 De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`. De artifacts van de build worden dan opgeslagen en gebruikt in de release pipeline.
 
@@ -40,6 +48,8 @@ De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke c
 4. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip` die gebruikt kan worden in de releae pipeline.
 
 #### Release
+
+![Release pipeline IMG](./img/pipeline/release.png)
 
 Releasen is de artifact(s) online zetten, in mijn geval op productie. De productie server is een Azure Web Service. Je geeft aan welke artifacts er gebruikt worden en van welke build. Dan heb ik 1 stage, de deploy stage. Deze bestaat uit meerdere taken; de taken zijn:
 
@@ -51,6 +61,8 @@ Releasen is de artifact(s) online zetten, in mijn geval op productie. De product
 Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-api.azurewebsites.net/actuator/info)
 
 ## Swagger
+
+![Swagger IMG](./img/swagger.png)
 
 Om de API inzichtelijk te maken naar andere ontwikkelaars toe heb ik gekozen voor Swagger. Dit is een user interface met informatie over de API's, welke parameters, waar ze staan en wat de modellen zijn die ze returnen. Je kan ook in plaats alles proberen (in de browser). Hier zie je de volgende controllers: `WebController`, `CoreController`, `SlackController` en de `FacebookController`.
 
