@@ -51,3 +51,9 @@ Hier kwam de _Single Responiblity_ al meer naar voren. Er is een aparte service 
 ### Architectuur-3
 
 Dit is de architectuur de het beste de SOLID principes aanhoud. Alles heeft maar 1 parent en is daadwerkelijk verantwoordelijk voor 1 ding, _Single Responiblity_!
+
+## Referenties
+
+[SOLID principle](https://en.wikipedia.org/wiki/SOLID)
+
+[Principles Of Microservices](https://samnewman.io/talks/principles-of-microservices/)
