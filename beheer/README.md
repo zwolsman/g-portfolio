@@ -24,7 +24,7 @@ Om het inzichtelijk te maken naar andere mensen toe wat ik aan het doen ben heb 
 
 ### Readme
 
-Er is een `README.md` in de repository waar benodigde informatie in staat van de applicatie. Welke configuratie er allemaal is, of de build lukt en hoe je hem moet starten.
+Er is een `README.md` in de repository waar benodigde informatie in staat van de applicatie. Welke configuratie er allemaal is, de build geschiedenis en hoe je de applicatie moet starten.
 
 ### Pipelines
 
@@ -32,7 +32,7 @@ Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behale
 
 #### Build
 
-De build pipeline doet een 4-tal taken.
+De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`. De artifacts van de build worden dan opgeslagen en gebruikt in de release pipeline.
 
 1. Source code ophalen (een git checkout)
 2. Gradle wrapper starten met de taak `bootWar`, deze bouwt een `war` archief die gebruikt wordt in Azure.
@@ -41,7 +41,7 @@ De build pipeline doet een 4-tal taken.
 
 #### Release
 
-Releasen is de artifact online zetten, in mijn geval op productie. De productie server is een Azure Web Service. Je geeft aan welke artifacts er gebruikt worden en van welke build. Dan heb ik 1 stage, de deploy stage. Deze bestaat uit meerdere taken; de taken zijn:
+Releasen is de artifact(s) online zetten, in mijn geval op productie. De productie server is een Azure Web Service. Je geeft aan welke artifacts er gebruikt worden en van welke build. Dan heb ik 1 stage, de deploy stage. Deze bestaat uit meerdere taken; de taken zijn:
 
 1. Stop de App Service
 2. Gebruik het `schema.sql` script om de database in te richten
