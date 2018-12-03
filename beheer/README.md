@@ -1,6 +1,6 @@
 # Beheer
 
-## Agile
+## Agile - ASD
 
 ## Azure DevOps
 
@@ -93,3 +93,17 @@ De health endpoint is om te zien of de applicatie werkt na behoren. Als dit niet
   "status": "UP"
 }
 ```
+
+## Referenties
+
+[Adoptive Software Development](http://www.exa.unicen.edu.ar/catedras/agilem/cap23asd.pdf)
+
+[Git](https://git-scm.com)
+
+[Azure DevOps](https://azure.microsoft.com/en-us/services/devops/)
+
+[CI](https://en.wikipedia.org/wiki/Continuous_integration)/[CD](https://en.wikipedia.org/wiki/Continuous_delivery)
+
+[Swagger](https://swagger.io)
+
+[Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
