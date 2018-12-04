@@ -24,6 +24,10 @@ Wat je wil is dat er vanuit een decentralized applicatie direct contact wordt op
 
 ![Democracy](./img/democracy.png)
 
+De huidige situatie is een combinatie van. De blockchain is een democratie maar om daar te komen is er een monarchy. Wat je wil is een architectuur waar niemand volledig de baas is, een architectuur zonder koning! Zie het diagram hieronder voor de huidige situatie.
+
+![Architectuur monarchy](./img/architectuur-monarchy.png)
+
 ## Waarom wel
 
 Inzichtelijk
