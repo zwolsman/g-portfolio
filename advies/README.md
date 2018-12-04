@@ -18,7 +18,11 @@ Door het ontbreken van de wallets per gebruiker is het vertrouwen er niet. Hierd
 
 ![Monarchie](./img/monarchy.png)
 
-De bedoeling van blockchain juist is een data democratie. Dit is een systeem waar de meerderheid het eens moet zijn over de juistheid van de data.
+De bedoeling van blockchain juist is een data democratie. Dit is een systeem waar de meerderheid het eens moet zijn over de juistheid van de data. Dat gebeurt nu nog wel, er zijn meerdere computers die het er over eens zijn maar er is maar 1 iemand die een wijziging mag maken, vandaar de term monarchy.
+
+Wat je wil is dat er vanuit een decentralized applicatie direct contact wordt opgenomen met het smart contract. Deze maakt dan een wijziging en wordt geaccepteerd door de meerderheid. Zo ontstaat een democratie en is niet 1 partij verantwoordelijk. Om dus een decentralized applicatie te realiseren zal je een web applicatie moeten maken met web3 ondersteuning. Dit is fundamenteel anders dan wat de wens was van Info Support, die wouden ondersteuning met Slack.
+
+![Democracy](./img/democracy.png)
 
 ## Waarom wel
 
