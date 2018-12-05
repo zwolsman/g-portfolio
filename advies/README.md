@@ -8,11 +8,11 @@ De data die er nu opgeslagen wordt kan zeker wel op de blockchain alleen nu word
 
 ![Metamask](./img/ethereum-metamask-chrome.png)
 
-Deze extensie levert een wallet aan applicaties die daar om vragen, je moet hier wel voor inloggen (met bijvoorbeeld je private key) of een nieuwe genereren. Het nadeel hiervan is, is dat er dus verplicht een extensie geinstalleerd moet zijn. Ook is hier geen gebruik van single sign-on. Omdat je data/account niet centraal opgeslagen staat moet je zelf overal je private key gebruiken. Dit betekend dus dat als ik op een nieuwe computer mijn oude account wil gebruiken gaat dit alleen gaat door opnieuw mijn private keys te importeren.
+Deze extensie levert een wallet aan applicaties die daar om vragen, je moet hier wel voor inloggen (met bijvoorbeeld je private key) of een nieuwe genereren. Het nadeel hiervan is, is dat er dus verplicht een extensie geïnstalleerd moet zijn. Ook is hier geen gebruik van single sign-on. Omdat je data/account niet centraal opgeslagen staat moet je zelf overal je private key gebruiken. Dit betekend dus dat als ik op een nieuwe computer mijn oude account wil gebruiken gaat dit alleen gaat door opnieuw mijn private keys te importeren.
 
 Als je de private key kwijt bent kan je deze ook op geen enkele manier terug krijgen, er is geen "reset password" of "forgot password" optie. Je private key is _de sleutel_ tot alles, als deze gestolen wordt is dit ook echt een probleem. Je kan dus niet je wachtwoord veranderen want die is er niet. Je kan ook niet je private key veranderen, deze zal altijd hetzelfde blijven. Als de dieven je private key hebben gestolen kunnen ze ook overal bij.
 
-Dit zal echter niet snel gebeuren omdat je private key alleen offline opgeslagen zou moeten zijn en dus niet online. Jij bent als enige die de private key heeft, geen online service. Hierdoor kan er dus niet een centrale plek gehacked worden en zo tientalle gegevens uitgelekt worden van personen. Dit gebeurt nu wel met account databases; zie [1.4 Billion Clear Text Credentials Discovered in a Single Database][2].
+Dit zal echter niet snel gebeuren omdat je private key alleen offline opgeslagen zou moeten zijn en dus niet online. Jij bent als enige die de private key heeft, geen online service. Hierdoor kan er dus niet een centrale plek gehackt worden en zo tientallen gegevens uitgelekt worden van personen. Dit gebeurt nu wel met account databases; zie [1.4 Billion Clear Text Credentials Discovered in a Single Database][2].
 
 Door het ontbreken van de wallets per gebruiker is het vertrouwen er niet. Hierdoor is de keuze gemaakt dat niemand bonussen direct kan geven via het smart contract maar enkel via de API. Hierdoor haal je de kracht weg van het smart contract. Er is 1 wallet (die van de API) die wijzingen kan doen, alle andere kunnen alleen dingen uitlezen. Dit maakt weer een monarchie, er is 1 iemand die de macht heeft en dingen kan wijzigen.
 
@@ -28,7 +28,7 @@ De huidige situatie is een combinatie van beide. De blockchain is een democratie
 
 ![Architectuur monarchy](./img/architectuur-monarchy.png)
 
-Als er gebruikt gemaakt wordt van de wallet en deze als identifier gebruiken kunnen collega's onderling elkaars adressen uitwisselen. Dan maak je punten over naar het adres en dit doe je rechtstreeks op de blockchain. Op deze manier zit er niemand tussen en komt de blockchain echt tot zijn recht. In het diagram hieronder zie je daardoor ook geen koning. De applicatie zal dan toegankelijk zijn via het web en maakt gebruik van de [metamask][1] plugin.
+Als er gebruikt gemaakt wordt van de wallet en deze als identifier gebruiken kunnen collega's onderling elkaars adressen uitwisselen. Dan maak je punten over naar het adres en dit doe je rechtstreeks op de blockchain. Op deze manier zit er niemand tussen en komt de blockchain echt tot zijn recht. In het diagram hieronder zie je daardoor ook geen koning. De applicatie zal dan toegankelijk zijn via het web en maakt gebruik van de [metamask][1] plug-in.
 
 ![Architectuur democracy](./img/architectuur-democracy.png)
 
@@ -54,7 +54,7 @@ Door de architectuur wordt de blockchain niet goed gebruikt. Met de eisen van In
 
 #### Traag
 
-Door de eis dat het geintegeert moet zijn in Slack is dit een nadeel. Slack verwacht binnen 3 seconde een reactie op een webhook call en dan kan je daarna nog 30 minuten reageren. Als een transactie dus langer zal gaan duren dan dat kan er geen feedback meer gegeven worden aan de eindgebruiker.
+Door de eis dat het geïntegreerd moet zijn in Slack is dit een nadeel. Slack verwacht binnen 3 seconde een reactie op een webhook call en dan kan je daarna nog 30 minuten reageren. Als een transactie dus langer zal gaan duren dan dat kan er geen feedback meer gegeven worden aan de eindgebruiker.
 
 #### Weinig toegevoegde waarde
 
