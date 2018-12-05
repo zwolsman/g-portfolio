@@ -64,6 +64,12 @@ Omdat het niet goed wordt gebruikt is er ook weinig toegevoegde waarde.
 
 Omdat de blockchain decentralized is betekend dit dat er niet 1 server is maar meerdere. In mijn stage opdracht is er een totaal van 3 nodes die draaien, dit zijn dus 3x zoveel VM's als dat je gewoon 1 database hebt draaien. Dit is dus 3x zo duur.
 
+## Conclusie
+
+Voor dit project zou ik de blockchain niet aanraden. Deze bied te weinig extra's waardoor het de kosten niet kan verantwoorden. Door de nieuwigheid zijn er weinig mensen met kennis van waardoor het ontwikkelen minder snel verloopt en duurder is. Ook het draaien van een eigen blockchain kost extra. Dit is veel makkelijker/eenvoudiger/goedkoper te doen met een centrale website, API en database.
+
+Als je de applicatie dus zonder blockchain bouwt zal die sneller klaar zijn door de in-house kennis van Info Support en goedkoper zijn om in productie te draaien omdat die maar 1 node nodig hebt. Als het decentrale het hoofdaspect is van de applicatie zal alles er omheen ook in die trend gemaakt moeten worden. Het komt er op neer, als je er voor kiest moet je er ook 100% voor gaan om alle voordelen eruit te halen.
+
 ## Referenties
 
 [Cryptokitties](https://www.cryptokitties.co)
