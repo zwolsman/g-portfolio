@@ -82,9 +82,11 @@ Voor dit project zou ik de blockchain niet aanraden. Deze biedt te weinig extra'
 
 Als je de applicatie dus zonder blockchain bouwt zal die sneller klaar zijn door de in-house kennis van Info Support. Dit zal ook goedkoper zijn om in productie te draaien omdat die maar 1 machine nodig heeft. Als het decentrale het hoofdaspect is van de applicatie, zal alles er omheen ook in die trend gemaakt moeten worden. Het komt er op neer, als je er voor kiest, moet je er ook 100% voor gaan om alle voordelen eruit te halen.
 
+De applicatie [CryptoKitties][3] is een mooi voorbeeld. Hier wordt de kracht van blockchain gebruikt om _CryptoKitties_ te verzamelen. Met het gebruik van de wallet wordt een _CryptoKittie_ aan jou toegewijzigd en aan niemand anders. Deze kan je dan weer ruilen met andere gebruikers, dit is doormiddel van een adres. Hier zit geen andere partij tussen. De makers van _CryptoKitties_ hebben dus een smart contract uitgebracht waarmee gebruikers interacteren. Op die manier worden er nieuwe _CryptoKitties_ gemaakt door het kruisen van de ouders. Dit wordt allemaal vastgelegd in de blockchain en kan je dus de hele familieboom zien; de ouders en de kinderen. Hier heb je geen centrale database of server, dit is een echte democratie.
+
 ## Referenties
 
-[Cryptokitties](https://www.cryptokitties.co)
+[Cryptokitties][3]
 
 [Web3 – The Decentralized Web](https://blockchainhub.net/web3-decentralized-web/)
 
@@ -92,3 +94,4 @@ Als je de applicatie dus zonder blockchain bouwt zal die sneller klaar zijn door
 
 [1]: https://metamask.io/
 [2]: https://medium.com/4iqdelvedeep/1-4-billion-clear-text-credentials-discovered-in-a-single-database-3131d0a1ae14
+[3]: https://www.cryptokitties.co
