@@ -84,6 +84,10 @@ Als je de applicatie dus zonder blockchain bouwt zal die sneller klaar zijn door
 
 De applicatie [CryptoKitties][3] is een mooi voorbeeld. Hier wordt de kracht van blockchain gebruikt om _CryptoKitties_ te verzamelen. Met het gebruik van de wallet wordt een _CryptoKittie_ aan jou toegewijzigd en aan niemand anders. Deze kan je dan weer ruilen met andere gebruikers, dit is doormiddel van een adres. Hier zit geen andere partij tussen. De makers van _CryptoKitties_ hebben dus een smart contract uitgebracht waarmee gebruikers interacteren. Op die manier worden er nieuwe _CryptoKitties_ gemaakt door het kruisen van de ouders. Dit wordt allemaal vastgelegd in de blockchain en kan je dus de hele familieboom zien; de ouders en de kinderen. Hier heb je geen centrale database of server, dit is een echte democratie.
 
+![CryptoKitties + MetaMask](./img/CryptoKitties.png)
+
+###### Figuur 6 - CryptoKitties Connect met MetaMask
+
 ## Referenties
 
 [Cryptokitties][3]
