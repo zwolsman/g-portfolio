@@ -10,11 +10,11 @@ De data die er nu opgeslagen wordt, kan zeker wel op de blockchain, alleen worde
 
 ###### Figuur 1 - Ethereum, Metamask & Chrome
 
-Deze extensie levert een wallet aan applicaties die daar om vragen. Je moet hier wel voor inloggen (met bijvoorbeeld je private key) of een nieuwe genereren. Het nadeel hiervan, is dat er dus verplicht een extensie geïnstalleerd moet zijn. Ook is hier geen gebruik van single sign-on. Omdat je data/account niet centraal opgeslagen staat, moet je zelf overal je private key gebruiken. Dit betekent dus dat als ik op een nieuwe computer mijn oude account wil gebruiken, dit alleen gaat door opnieuw mijn private keys te importeren.
+Deze extensie levert een wallet aan applicaties die daar om vragen. Je moet hier wel voor inloggen (met bijvoorbeeld je private key) of een nieuwe genereren. Het nadeel hiervan is dat er dus verplicht een extensie geïnstalleerd moet zijn. Ook is hier geen gebruik van single sign-on. Omdat je data/account niet centraal opgeslagen staat, moet je zelf overal je private key gebruiken. Dit betekent dus dat als ik op een nieuwe computer mijn oude account wil gebruiken, dit alleen gaat door opnieuw mijn private keys te importeren.
 
 Als je de private key kwijt bent, kan je deze ook op geen enkele manier terug krijgen want er is geen "reset password" of "forgot password" optie. Je private key is _de sleutel_ tot alles; als deze gestolen wordt is dit ook echt een probleem. Je kan je wachtwoord dus niet veranderen want dat is er niet. Ook je private key kan je niet veranderen, deze zal altijd hetzelfde blijven. Als de hackers je private key hebben gestolen kunnen ze dus ook overal bij.
 
-Dit zal echter niet snel gebeuren omdat je private key alleen offline opgeslagen zou moeten zijn. Jij bent de enige die de private key heeft. Je private key staat dus niet ergens online opgeslagen. Hierdoor kan er geen centrale plek gehackt worden en zo tientallen (miljoenen) gegevens uitlekken van personen. Dit gebeurt nu wel met account databases; zie [1.4 Billion Clear Text Credentials Discovered in a Single Database][2].
+Dit zal echter niet snel gebeuren omdat je private key alleen offline opgeslagen zou moeten zijn. Jij bent de enige die de private key heeft. Je private key staat dus niet ergens online opgeslagen. Hierdoor kan er geen centrale plek gehackt worden waardoor er tientallen (miljoenen) gegevens uitlekken van personen. Dit gebeurt nu wel met account databases; zie [1.4 Billion Clear Text Credentials Discovered in a Single Database][2].
 
 Door het ontbreken van de wallet per gebruiker is het vertrouwen er niet. Een wallet is de enige manier waarop je iemand uniek kan identificeren op de blockchain. Er wordt geen gebruikt van wallets. Daardoor is er voor gekozen om niemand toe te staan om direct mutaties uit te laten voeren via het smart contract. Dit kan alleen via de API. Hierdoor haal je de kracht weg van het smart contract. Er is 1 wallet (die van de API) die wijzingen kan doen; alle andere kunnen alleen data uitlezen. Dit maakt weer een monarchie. Er is namelijk 1 iemand die de macht heeft en data kan wijzigen, bijvoorbeeld een bonus toekennen.
 
@@ -30,7 +30,7 @@ Wat je wil, is dat er vanuit een decentrale applicatie, direct contact wordt opg
 
 ###### Figuur 3 - Democratie systeem
 
-De huidige situatie is een combinatie van beide. De blockchain is een democratie, maar om daar te komen is er een monarchie. Wat je wil, is een architectuur waar niemand volledig de baas is, een architectuur zonder koning! Zie figuur 4 voor de huidige situatie. Met Slack zal dit nooit anders kunnen omdat Slack een centrale applicatie is die beheerd wordt door Slack Technologies, Inc.. Wel kan er voor gekozen worden om Slack niet te ondersteunen en alleen een webapplicatie te maken. Door deze keuze te maken, kan er met volledige democratie een puntensysteem gemaakt worden.
+De huidige situatie is een combinatie van beide. De blockchain is een democratie, maar om daar te komen is er een monarchie. Wat je wil, is een architectuur waar niemand volledig de baas is, een architectuur zonder koning! Zie figuur 4 voor de huidige situatie. Met Slack zal dit nooit anders kunnen omdat Slack een centrale applicatie is die beheerd wordt door Slack Technologies, Inc. Wel kan er voor gekozen worden om Slack niet te ondersteunen en alleen een webapplicatie te maken. Door deze keuze te maken, kan er met volledige democratie een puntensysteem gemaakt worden.
 
 ![Architectuur monarchy](./img/architectuur-monarchy.png)
 
@@ -50,11 +50,11 @@ De blockchain is geen silver bullet die alles oplost, het heeft voor- en nadelen
 
 #### Inzichtelijk
 
-Omdat de blockchain publiek toegankelijk is, kan iedereen zijn eigen "front-end" maken met directe toegang tot de data. Hier is geen goedkeuring of wat dan ook voor nodig, het is gewoon publiekelijk beschikbaar.
+Omdat de blockchain publiek toegankelijk is, kan iedereen zijn eigen "front-end" maken met directe toegang tot de data. Hier is geen goedkeuring of wat dan ook voor nodig, het is gewoon publiek beschikbaar.
 
 #### Decentraal
 
-Wanneer een machine uitvalt is het niet erg, dan zijn nog andere machines die precies dezelfde data hebben. Zodra de machine weer online komt, kan die zichzelf updaten naar de versie waar de andere machines op zitten. Op die manier is deze oplossing robuuster. Dit is ook haalbaar zonder blockchain, dan heb je meerdere machines draaien van de API en een load balancer. Op die manier blijft de API ook werken bij uitval van één (of meerdere) machines.
+Wanneer een machine uitvalt is het niet erg, dan zijn er nog andere machines die precies dezelfde data hebben. Zodra de machine weer online komt, kan die zichzelf updaten naar de versie waar de andere machines op zitten. Op die manier is deze oplossing robuuster. Dit is ook haalbaar zonder blockchain, dan heb je meerdere machines draaien van de API en een load balancer. Op die manier blijft de API ook werken bij uitval van één (of meerdere) machines.
 
 ### Nadelen
 
@@ -74,19 +74,21 @@ Aangezien het niet goed wordt gebruikt, is er ook weinig toegevoegde waarde.
 
 #### Duur
 
-De blockchain decentraal. Dit betekent dat er niet één machine is maar meerdere. In mijn stage opdracht is er een totaal van 3 machines gebruikt. Dit is dus 3 keer zoveel in vergelijking met een “conventionele” centrale single-machine oplossing.
+De blockchain is decentraal. Dit betekent dat er niet één machine is maar meerdere. In mijn stage opdracht is er een totaal van 3 machines gebruikt. Dit is dus 3 keer zoveel in vergelijking met een “conventionele” centrale single-machine oplossing.
 
 ## Conclusie
 
-Voor dit project zou ik de blockchain niet aanraden. Deze biedt te weinig extra's waardoor het de kosten niet kan verantwoorden. Door de nieuwigheid zijn er weinig mensen met kennis van blockchain. Doordoor verloopt het ontwikkelen minder snel en dus duurder. Ook het draaien van een eigen blockchain kost extra omdat er meerdere machines nodig zijn. Dit is veel makkelijker/eenvoudiger/goedkoper te doen met een centrale website, API en database.
+Voor dit project zou ik de blockchain niet aanraden. Deze biedt te weinig extra's waardoor het de kosten niet kan verantwoorden. Door de nieuwigheid zijn er weinig mensen met kennis van blockchain. Daardoor verloopt het ontwikkelen minder snel en is het dus duurder. Ook het draaien van een eigen blockchain kost extra geld omdat er meerdere machines nodig zijn. Dit is veel makkelijker/eenvoudiger/goedkoper te doen met een centrale website, API en database.
 
-Als je de applicatie dus zonder blockchain bouwt zal die sneller klaar zijn door de in-house kennis van Info Support. Dit zal ook goedkoper zijn om in productie te draaien omdat die maar 1 machine nodig heeft. Als het decentrale het hoofdaspect is van de applicatie, zal alles er omheen ook in die trend gemaakt moeten worden. Het komt er op neer, als je er voor kiest, moet je er ook 100% voor gaan om alle voordelen eruit te halen.
+Als je de applicatie dus zonder blockchain bouwt dan zal die sneller klaar zijn door de in-house kennis van Info Support. Dit zal ook goedkoper zijn om in productie te draaien omdat die maar 1 machine nodig heeft. Als het decentrale het hoofdaspect is van de applicatie, zal alles er omheen ook in die trend gemaakt moeten worden. Het komt er op neer, als je er voor kiest, moet je er ook 100% voor gaan om alle voordelen eruit te halen.
 
-De applicatie [CryptoKitties][3] is een mooi voorbeeld. Hier wordt de kracht van blockchain gebruikt om _CryptoKitties_ te verzamelen. Met het gebruik van de wallet wordt een _CryptoKittie_ aan jou toegwezen en aan niemand anders. Deze kan je dan weer ruilen met andere gebruikers, dit is doormiddel van een adres. Hier zit geen andere partij tussen. De makers van _CryptoKitties_ hebben dus een smart contract uitgebracht waarmee gebruikers direct interacteren. Op die manier worden er nieuwe _CryptoKitties_ gemaakt door het kruisen van de ouders. Dit wordt allemaal vastgelegd in de blockchain en kan je dus de hele familieboom zien; de ouders en de kinderen. Hier heb je geen centrale database of server, dit is een echte democratie.
+De applicatie [CryptoKitties][3] is een mooi voorbeeld van hoe de blockchain wel efficient kan gebruikt worden. Hier wordt de kracht van blockchain gebruikt om _CryptoKitties_ te verzamelen, dit zijn digitale katten. Met het gebruik van de wallet wordt een _CryptoKittie_ aan jou toegwezen en aan niemand anders. Deze kan je dan weer ruilen met andere gebruikers, dit is doormiddel van een adres. Hier zit geen andere partij tussen. De makers van _CryptoKitties_ hebben dus een smart contract uitgebracht waarmee gebruikers direct interacteren. Dit wordt allemaal vastgelegd in de blockchain en daar kan je dus functies op aanroepen. Hier heb je geen centrale database of server, dit is een echte democratie.
 
 ![CryptoKitties + MetaMask](./img/CryptoKitties.png)
 
 ###### Figuur 6 - CryptoKitties Connect met MetaMask
+
+<!-- TODO: Slot zinnetje of 2 bedenken -->
 
 ## Referenties
 
