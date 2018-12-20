@@ -1,5 +1,7 @@
 # Interview
 
+![Youtube Placeholder](https://placehold.it/240x160)
+
 ## Proof of Concept vragen
 
 De eerste opzet vragen voor het interview. Hier was nog geen feedback op gegeven en was voor de ruwe versie. Dit is uiteindelijk wel de basis geweest voor het uiteindelijke product.
