@@ -2,6 +2,16 @@
 
 ## Agile - ASD
 
+![ASD IMG](./img/asd.gif)
+
+Als project methode is er gebruik gemaakt van het [ASD](https://nl.wikipedia.org/wiki/Adaptive_Software_Development) model. ASD staat voor _Adaoptive Software Development_, dit is een agile methode. Er voor een agile methodiek gekozen omdat de requirements nog niet helemaal duidelijk waren. Door iteratief te werk te gaan heeft de klant altijd een prototype die werkt.
+
+### Sprints
+
+![Sprint 8](./img/sprint-8.png)
+
+Er is gebruik gemaakt van sprints van 1 week op een uitzondering van week 17. Die sprint duurde 2 weken i.v.m. kerst + oud & nieuw. Na elke sprint hadden we een _Learn_ moment, een terugblik op de sprint. Wat ging er goed, wat ging er fout en hoe gaan we het deze sprint aanpakken (_Speculate_). De planningen werden vastgelegd in [Azure DevOps](#Azure-DevOps).
+
 ## Azure DevOps
 
 Azure DevOps is een omgeving waar alle tooling bij elkaar komt voor je project beheer.
