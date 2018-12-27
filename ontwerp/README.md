@@ -1,16 +1,16 @@
 # Ontwerp
 
-Door de ASD project methode is de applicatie gaande tijd veranderd. Dit is omdat de requirements vanuit de klant aanpasde. De eerste iteratie was alleen met Slack ondersteuning en directe communicatie met de Blockchain. Daarna kwam de vraag voor ondersteuning voor andere chat services; er was gekozen voor Facebook. Het moest wel zo opgezet worden dat het uitbreidbaar was voor eventueel andere chat services, dit was iteratie 2. Na deze realisatie heb ik feedback gevraagd aan mede collega's en kwam ik tot de conclusie om een micro service architectuur te implementeren. Dit is zodat elke chat service een aparte service + stack heeft (zelf gekozen programmeer taal en chat implementatie). Op deze manier is alles helemaal los van elkaar. De chat service implementaties weten niks van de blockchain, alleen van het `core` project. Hier zijn verschillende endpoints op om data op te halen of te versturen.
+Door de ASD project methode is de applicatie gaande tijd veranderd. Dit is omdat de requirements vanuit de klant zijn aangepast. De eerste iteratie was alleen met Slack ondersteuning en directe communicatie met de Blockchain. Daarna kwam de vraag voor ondersteuning voor andere chat services; er was gekozen voor Facebook. Het moest wel zo opgezet worden dat het uitbreidbaar was voor eventueel andere chat services, dit was iteratie 2. Na deze realisatie heb ik feedback gevraagd aan mede collega's en kwam ik tot de conclusie om een micro service architectuur te implementeren. Dit is zodat elke chat service een aparte service + stack heeft (zelf gekozen programmeer taal en chat implementatie). Op deze manier is alles helemaal los van elkaar. De chat service implementaties weten niks van de blockchain, alleen van het `core` project. Hier zijn verschillende endpoints op om data op te halen of te versturen.
 
 ## Eerste iteratie
 
-Dit was de eerste iteratie. Het was een `Controller` met een endpoint voor de Slack webhook. Deze functie riep dan functies aan op de Blockchain waardoor er problemen waren met de time-out's. Een van de randvoorwaardes van Slack is dat er binnen 3 seconde een reactie verstuurd moet worden. Deze reactie wordt dan naar de gene gestuurd die het commando heeft aangeroepen. Omdat de Blockchain langer doet over verwerken van data door de decentralized nature moet dit dus asynchroon opgelost worden. Dit voegde al snel veel complexiteit toe aan de applicatie. In deze iteratie was hier nog geen rekening mee gehouden.
+Als eerste maakte ik een `Controller` met een endpoint voor de Slack webhook. Deze functie riep dan functies aan op de Blockchain waardoor er problemen waren met de time-out's. Een van de randvoorwaardes van Slack is dat er binnen 3 seconden een reactie verstuurd moet worden. Deze reactie wordt dan naar de verzender gestuurd. Omdat de Blockchain langer doet over verwerken van data door de decentralized nature moet dit dus asynchroon opgelost worden. Dit voegde al snel veel complexiteit toe aan de applicatie. In deze iteratie was hier nog geen rekening mee gehouden.
 
 ## Tweede iteratie
 
 ![Architectuur 2](./img/architectuur-2.png)
 
-Na de eerste iteratie had ik nieuwe inzichten. Er moet rekening gehouden worden met asynchrone code. Deze logica wil je niet in de `Controller`, ik heb dus een `Service` aangemaakt. Deze service heeft de logica voor het afhandelen van een chat service en de asynchrone code. Ook is er een abstractie laag toegevoegd. Een service moet een interface implementeren zodat het systeem er zeker van weet dat die dit kan afhandelen. Na deze iteratie werkende het systeem en was het uitbreidbaar, toch voelde het niet helemaal goed. Omdat de vraag kwam vanuit de `PO` om de commando's ook via een REST-interface te exposen moest er dus synchrone code in een asynchrone manier verwerkt worden. Dit begon te wringen en vroeg ik dus om feedback aan collega's.
+Na de eerste iteratie had ik nieuwe inzichten. Er moest rekening gehouden worden met asynchrone code. Deze logica wil je niet in de `Controller`, ik heb dus een `Service` aangemaakt. Deze service heeft de logica voor het afhandelen van een chat service en de asynchrone code. Ook is er een abstractie laag toegevoegd. Een service moet een interface implementeren zodat het systeem er zeker van weet dat die dit kan afhandelen. Na deze iteratie werkende het systeem en was het uitbreidbaar, toch voelde het niet helemaal goed. Omdat de vraag kwam vanuit de `PO` om de commando's ook via een REST-interface te exposen moest er dus synchrone code in een asynchrone manier verwerkt worden. Dit begon te wringen en vroeg ik dus om feedback aan collega's.
 
 ![Architectuur 3](./img/architectuur-3.jpeg)
 
@@ -26,7 +26,7 @@ De applicatie bestaat nu uit 4 services.
 
 - Web
 
-  De web service is een tussen service tussen een web interface en het core project. Deze heeft dus een valide `clientId` en `clientSecret` om functies aan te roepen. Deze is ook OAuth beschermd en zal dus alleen ingelogde gebruikers toestaan. Deze gebruikers zullen geauthoriseerd worden via de Azure Active Directory.
+  De web service is een tussen service tussen een web interface en het core project. Deze heeft dus een valide `clientId` en `clientSecret` om functies aan te roepen. Deze is ook OAuth beschermd en zal dus alleen ingelogde gebruikers toestaan. Deze gebruikers zullen geautoriseerd worden via de Azure Active Directory.
 
 - Slack
 
