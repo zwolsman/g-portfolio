@@ -4,10 +4,24 @@ Er is uiteindelijk een werkend product opgeleverd. Er is een web interface, slac
 
 ## Code
 
-Alle code is terug te vinden in het [code](./code/) mapje. Hier zie je een gradle project. Om het te builden kan er gebruik gemaakt worden van de gradle wrapper. Het commando hieronder is om het te builden. De wars staan dan in `<sub-project>/build/libs/` map.
+Alle code is terug te vinden in het [code](./code/) mapje. Hier zie je 2 git submodules, een voor de api (backend) en een voor de ui (frontend).
+
+In de submodule `api` zie je een gradle project. Om het te builden kan er gebruik gemaakt worden van de gradle wrapper. Het commando hieronder is om het te builden. De wars staan dan in `<sub-project>/build/libs/` map.
 
 ```bash
-murf@Marvins-MacBook-Pro: [~/Projects/bbb (master)] $ ./gradlew bootWar
+murf@Marvins-MacBook-Pro: [~/Projects/api (master)] $ ./gradlew bootWar
+```
+
+In de submodule `ui` zie je een react project. Dit project kan je lokaal draaien door het volgende commando uit te voeren. Er zal lokaal een development server opgestart worden die bereikbaar is via poort 3000.
+
+```bash
+murf@Marvins-MacBook-Pro: [~/Projects/ui (master)] $ yarn run
+```
+
+Om het te builden kan je het volgende commando uitvoeren. Dan komt de geoptimaliseerde code in het mapje `build` te staan. Dit is een versie die in deployment gebruikt wordt.
+
+```bash
+murf@Marvins-MacBook-Pro: [~/Projects/ui (master)] $ yarn build
 ```
 
 ## Core
