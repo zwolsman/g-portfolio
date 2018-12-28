@@ -44,31 +44,48 @@ Er is een `README.md` in de repository waar benodigde informatie in staat van de
 
 ### Pipelines
 
-Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behalen. De 2 doelen die ik heb binnen mijn project zijn het bouwen van de applicatie en het releasen (deployen) van de applicatie in de Azure Cloud. Hier zijn dus 2 pipelines voor opgezet.
+Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behalen. De 2 doelen die ik heb binnen mijn project zijn het bouwen van de applicatie en het releasen (deployen) van de applicatie in de Azure Cloud. Voor het builden zijn 3 pipelines opgezet en voor het releasen 1.
 
-#### Build
+#### Build - API
 
-![Build pipeline IMG](./img/pipeline/build.png)
+![Build pipeline IMG](./img/pipeline/build-api.png)
 
-De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`. De artifacts van de build worden dan opgeslagen en gebruikt in de release pipeline.
+De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`.
 
 1. Source code ophalen (een git checkout)
-2. Gradle wrapper starten met de taak `bootWar`, deze bouwt een `war` archief die gebruikt wordt in Azure.
-3. De files kopieren die `/build/libs/*.*` en `src/main/resources/*.sql` matchen, dit is de `ROOT.war` en de `schema.sql`. Deze worden als artifact gezien.
-4. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip` die gebruikt kan worden in de releae pipeline.
+2. Gradle wrapper starten met de taak `build`. Deze gaat per project een build actie doen. Om een build actie te mogen doen zal er eerst een test gedraaid worden, dit zijn unit tests. Deze worden dus automatisch gedraaid.
+3. De files kopieren die `**/*.war` en `**/*.sql` matchen, dit `core.war`, `facebook.war`, `slack.war`, `web.war` en de `schema.sql`. Deze worden als artifact gezien.
+4. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip`. Deze kan gebruikt worden in andere pipelines. Deze wordt gebruikt in de `BBB Full stack` pipeline.
+
+#### Build - WEB
+
+De build van een react project is anders dan van een gradle project. Dit project maakt gebruik van de node package manager. In het bestand `package.json` staan alle packages die gebruikt worden. Deze pipeline bestaat uit 5 taken. Als er een commit is gemaakt op de `master` branch zal deze pipeline automatisch draaien.
+
+1. Source code ophalen (een git checkout)
+2. Een `npm install` doen. Dit installeerd alle packages gespecifieerd in de `package.json`.
+3. Een `npm build` voor het daadwerkelijk bouwen van het project. De output komt in de `build` folder.
+4. De files kopieren die in de `build` map staan.
+5. Het publishen van de artifact. Hier wordt ook een `drop.zip` van gemaakt. Deze kan ook gebruikt worden in andere pipelines. Ook deze wordt gebruikt in de `BBB Full stack` pipeline.
+
+#### Build - Full Stack
+
+![Full stack trigger](./img/pipeline/trigger-fullstack.png)
+Deze pipeline is voor de volledige applicatie. Omdat de volledige applicatie bestaat uit 2 aparte projecten is dit nodig. Deze pipeline heeft 6 stappen om uit te voeren. Het einddoel van deze pipeline is een docker image die gedraait kan worden in de Azure Cloud. Deze zal dan de combinatie van de 5 projecten hebben. In tegenstelling tot de andere pipelines die automatisch draaien als er een commit is gedaan op een master branch heb je hier de trigger van andere pipelines. Omdat deze pipeline afhankelijk is van de api en de web pipelines wordt deze automatisch gedraaid als er 1 van de 2 klaar is.
+
+1. Download de artifact van de api pipeline
+2. Download de artifact van de web pipeline
+3. De artifact van de api pipeline uitpakken
+4. De artifact van de web pipeline uitpakken
+5. De docker image bouwen genaamd `bbb`. Deze heeft de tag `latest` maar ook de git tags. Dit is zodat ik altijd een optie heb om een specifieke versie terug te zetten.
+6. De image pushen naar de repository. In azure kan je een eigen repository aanmaken. De repository die gebruikt wordt heet `bbbimages`.
 
 #### Release
 
 ![Release pipeline IMG](./img/pipeline/release.png)
 
-Releasen is de artifact(s) online zetten, in mijn geval op productie. De productie server is een Azure Web Service. Je geeft aan welke artifacts er gebruikt worden en van welke build. Dan heb ik 1 stage, de deploy stage. Deze bestaat uit meerdere taken; de taken zijn:
+Releasen is het online zetten van een versie, in mijn geval de laatste versie. De omgeving die ik heb is een productie omgeving, hier wordt de laatste nieuwe docker image gedraaid. Deze docker image draait in een _Azure Web Service_. Omdat Azure DevOps zo goed samen werkt met de Azure Cloud omgeving was het configureren heel makkelijk. Er is maar 1 stap, de _Azure App Service Deploy_. Deze is geconfigureerd om de `bbbimages` container registery te gebruiken voor het ophalen van de `bbb` image. Deze wordt dan gepusht naar de Web Service en online gezet.
 
-1. Stop de App Service
-2. Gebruik het `schema.sql` script om de database in te richten
-3. Deploy de war naar de (gestopte) App Service
-4. Start de App Service
-
-Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-apiv2.azurewebsites.net/core/actuator/info)
+Als dit gelukt is, is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-apiv2.azurewebsites.net/core/actuator/info)
 
 ## Swagger
 
@@ -85,11 +102,11 @@ Het info endpoint bevat informatie over de build. Hieronder zie je een voorbeeld
 ```json
 {
   "build": {
-    "version": "1.0.0.02106f9",
-    "artifact": "bbb-api",
-    "name": "bbb-api",
+    "version": "1.0.0.43d438a",
+    "artifact": "core",
+    "name": "core",
     "group": "com.infosupport",
-    "time": "2018-10-31T12:06:21.104Z"
+    "time": "2018-12-27T09:34:56.476Z"
   }
 }
 ```
