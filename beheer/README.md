@@ -68,7 +68,7 @@ Releasen is de artifact(s) online zetten, in mijn geval op productie. De product
 3. Deploy de war naar de (gestopte) App Service
 4. Start de App Service
 
-Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-api.azurewebsites.net/actuator/info)
+Als deze stappen doorgaan zijn is de release succesvol afgerond en staat er een nieuwe versie online. De huidige versie kan je dan checken op het [info endpoint](http://bbb-apiv2.azurewebsites.net/core/actuator/info)
 
 ## Swagger
 
