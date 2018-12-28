@@ -2,6 +2,8 @@
 
 ![Youtube Placeholder](https://placehold.it/240x160)
 
+> Klik op het plaatje hier boven voor het interview. (NOT WORKING YET)
+
 Hier komt mijn interview te staan. Als er verdere vragen zijn betreffend mijn ICT aspecten kan je hieronder linkjes vinden naar de pagina's. Als er foto's/screenshots aanwezig zijn is er een mapje `img` gemaakt.
 
 Als je alleen de code wil zien is die [hier](./realisatie/code) beschikbaar.
