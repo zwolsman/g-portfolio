@@ -27,3 +27,5 @@ In de submodule `g-log` vind je de daadwerkelijke volledige blog.
 - [Hoe werkt een slash commando](https://github.com/zwolsman/g-log/blob/master/README.md#hoe-werkt-zon-slash-commando)
 
   Er is gekozen voor het integreren van een slash commando in Slack. Hier staat beschreven hoe het werkt. Dit beantwoord ook de vraag _"1.6.4 Hoe werkt de Slack API?"_.
+
+Deze onderzoeksvragen komen uit het eerder opgestelde project plan. Deze is terug te vinden in het mapje [analyse](../analyse). Hier staat [het projectplan](../analyse/Fontys_Projectplan_Reward_Systeem.docx).
