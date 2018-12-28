@@ -1,0 +1,6 @@
+[submodule "realisatie/code/api"]
+	path = realisatie/code/api
+	url = https://github.com/zwolsman/bbb-api.git
+[submodule "realisatie/code/ui"]
+	path = realisatie/code/ui
+	url = https://github.com/zwolsman/bbb-ui.git
