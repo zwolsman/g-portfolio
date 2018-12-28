@@ -4,3 +4,6 @@
 [submodule "realisatie/code/ui"]
 	path = realisatie/code/ui
 	url = https://github.com/zwolsman/bbb-ui.git
+[submodule "blog/g-log"]
+	path = blog/g-log
+	url = https://github.com/zwolsman/g-log.git
