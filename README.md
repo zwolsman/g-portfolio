@@ -10,6 +10,7 @@ Als je alleen de code wil zien is die [hier](./realisatie/code) beschikbaar.
 
 - [Advies](./advies/README.md)
 - [Beheer](./beheer/README.md)
+- [Blog](./blog/README.md)
 - [Interview](./interview/README.md)
 - [Ontwerp](./ontwerp/README.md)
 - [Realisatie](./realisatie/README.md)
