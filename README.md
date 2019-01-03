@@ -1,8 +1,8 @@
 # Portfolio
 
-![Youtube Placeholder](https://placehold.it/240x160)
+[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/6GvykLn81r4/0.jpg)](http://www.youtube.com/watch?v=6GvykLn81r4)
 
-> Klik op het plaatje hier boven voor het interview. (NOT WORKING YET)
+> Klik op het plaatje hier boven voor het interview.
 
 Hier komt mijn interview te staan. Als er verdere vragen zijn betreffend mijn ICT aspecten kan je hieronder linkjes vinden naar de pagina's. Als er foto's/screenshots aanwezig zijn is er een mapje `img` gemaakt.
 
