@@ -2,6 +2,8 @@
 
 [![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/6GvykLn81r4/0.jpg)](http://www.youtube.com/watch?v=6GvykLn81r4)
 
+Link: [http://www.youtube.com/watch?v=6GvykLn81r4](http://www.youtube.com/watch?v=6GvykLn81r4)
+
 ## Proof of Concept vragen
 
 De eerste opzet vragen voor het interview. Hier was nog geen feedback op gegeven en was voor de ruwe versie. Dit is uiteindelijk wel de basis geweest voor het uiteindelijke product.
@@ -32,4 +34,4 @@ De eerste opzet vragen voor het interview. Hier was nog geen feedback op gegeven
 
 ## Transcriptie
 
-Van het interview is een transcriptie gemaakt. Hier is feedback op gegeven door Bartosz. Om de transcriptie in te zien kunt u het bestand [transcriptie_v0.2.txt](./transcriptie_v0.2.txt) openen. Deze transcriptie is gebruikt als voorbeeld voor de opnames van het echte interview. In het interview zijn sommige dingen anders verwoord en is er daarom een nieuwe transcriptie geschreven. Deze is terug te vinden in het bestandje [transcriptie_FINAL.txt](./transcriptie_FINAL.txt)
+Van het interview is een transcriptie gemaakt. Hier is feedback op gegeven door Bartosz. Om de transcriptie in te zien kunt u het bestand [transcriptie_v0.2.md](./transcriptie_v0.2.md) openen. Deze transcriptie is gebruikt als voorbeeld voor de opnames van het echte interview. In het interview zijn sommige dingen anders verwoord en is er daarom een nieuwe transcriptie geschreven. Deze is terug te vinden in het bestandje [transcriptie_FINAL.md](./transcriptie_FINAL.md)
