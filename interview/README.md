@@ -1,6 +1,6 @@
 # Interview
 
-![Youtube Placeholder](https://placehold.it/240x160)
+[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/6GvykLn81r4/0.jpg)](http://www.youtube.com/watch?v=6GvykLn81r4)
 
 ## Proof of Concept vragen
 
