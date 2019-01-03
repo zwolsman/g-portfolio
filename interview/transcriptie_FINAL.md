@@ -1,9 +1,9 @@
-# TRANCRIPTIE INTERVIEW
+# Transcriptie Interview
 
-> MARVIN ZWOLSMAN\
-> 2 JAN. 2019\
-> VERSIE 1.0\
-> FINAL
+> Marvin Zwolsman\
+> 2 Jan. 2019\
+> Versie 1.0\
+> Final
 
 Ik loop momenteel stage bij Info Support, dit is mijn afstudeerstage. Info Support is een ICT consultancy bedrijf met meer dan 400 werknemers. Het heeft totaal 4 locaties; het hoofdkantoor is in Veenendaal. Dan heb je nog Den Bosch, Amsterdam en Mechelen. Dat is in België en dat is waar ik terecht ben gekomen.
 
