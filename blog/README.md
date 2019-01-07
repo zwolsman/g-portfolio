@@ -16,7 +16,7 @@ In de submodule `g-log` vind je de daadwerkelijke volledige blog.
 
   De onderzoeksvraag _"1.6.5 Hoe deploy ik een prive blockchain?"_ wordt hier beantwoord. Na deze dag is dit de deployment die gebruikt is voor de rest van de stage.
 
-- [Architectuur evolitie](https://github.com/zwolsman/g-log/blob/master/README.md#dag-24-5-10-2018)
+- [Architectuur evolutie](https://github.com/zwolsman/g-log/blob/master/README.md#dag-24-5-10-2018)
 
   Dit is een stuk wat verdeeld is over meerdere dagen. Het begon op dag 24 en gaat door t/m dag 29. Hier zie je de evolutie en uitleg waarom.
 
