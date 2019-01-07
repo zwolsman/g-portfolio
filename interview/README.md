@@ -1,8 +1,8 @@
 # Interview
 
-[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/6GvykLn81r4/0.jpg)](http://www.youtube.com/watch?v=6GvykLn81r4)
+[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/FyXBVl4dNRI/0.jpg)](http://www.youtube.com/watch?v=FyXBVl4dNRI)
 
-Link: [http://www.youtube.com/watch?v=6GvykLn81r4](http://www.youtube.com/watch?v=6GvykLn81r4)
+Link: [http://www.youtube.com/watch?v=FyXBVl4dNRI](http://www.youtube.com/watch?v=FyXBVl4dNRI)
 
 ## Proof of Concept vragen
 

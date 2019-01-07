@@ -1,6 +1,6 @@
 # Portfolio
 
-[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/6GvykLn81r4/0.jpg)](http://www.youtube.com/watch?v=6GvykLn81r4)
+[![Benny's Blockchain Bonus - Info Support Stage](http://img.youtube.com/vi/FyXBVl4dNRI/0.jpg)](http://www.youtube.com/watch?v=FyXBVl4dNRI)
 
 > Klik op het plaatje hier boven voor het interview.
 
