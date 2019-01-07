@@ -90,6 +90,12 @@ Voor dit project zou ik de blockchain niet aanraden. Deze biedt te weinig extra'
 
 Als je de applicatie dus zonder blockchain bouwt dan zal die sneller klaar zijn door de in-house kennis van Info Support. Dit zal ook goedkoper zijn om in productie te draaien omdat die maar 1 machine nodig heeft. Als het decentrale het hoofdaspect is van de applicatie, zal alles er omheen ook in die trend gemaakt moeten worden. Het komt er op neer, als je er voor kiest, moet je er ook 100% voor gaan om alle voordelen eruit te halen.
 
+### ISKA
+
+> ISKA is een afkorting voor Info Support Kennis Avond
+
+Woensdag 9 januari is er een ISKA betreffend dit advies. Hier ga ik aan ±15 collega's een presentatie geven over mijn bevindingen.
+
 ## Referenties
 
 [Cryptokitties][3]
