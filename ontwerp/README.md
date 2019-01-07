@@ -50,7 +50,7 @@ Hier kwam de _Single Responiblity_ al meer naar voren. Er is een aparte service 
 
 ### Architectuur-3
 
-Dit is de architectuur de het beste de SOLID principes aanhoud. Alles heeft maar 1 parent en is daadwerkelijk verantwoordelijk voor 1 ding, _Single Responiblity_!
+Dit is de architectuur de het beste de SOLID principes aanhoud. Alles heeft maar 1 parent en is daadwerkelijk verantwoordelijk voor 1 ding, _Single Responiblity_! Door het gebruik van interfaces is het uitbreidbaar, de desbetreffende implementaties worden niet gevraagd maar wel de interface. Hierdoor komt _Dependency inversion principle_ tot zijn recht, de abstractie. Ook het _Open/closed principle_ wordt hierdoor gerealiseerd.
 
 ## Referenties
 
