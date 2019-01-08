@@ -93,7 +93,7 @@ Als dit gelukt is, is de release succesvol afgerond en staat er een nieuwe versi
 
 ![Swagger IMG](./img/swagger.png)
 
-Om de API inzichtelijk te maken naar andere ontwikkelaars toe heb ik gekozen voor Swagger. Dit is een user interface met informatie over de API's, welke parameters, waar ze staan en wat de modellen zijn die ze returnen. Je kan ook in plaats alles proberen (in de browser). Hier zie je de volgende controllers: `WebController`, `CoreController`, `SlackController` en de `FacebookController`.
+Om de API inzichtelijk te maken naar andere ontwikkelaars toe heb ik gekozen voor Swagger. Dit is een user interface met informatie over de API's, welke parameters, waar ze staan en wat de modellen zijn die ze returnen. Je kan ook in plaats alles proberen (in de browser). Je kan de huidige versie zien van de core swagger [hier](https://bbb-apiv2.azurewebsites.net/core/swagger-ui.html#/core-controller).
 
 ## Actuator
 
@@ -104,11 +104,11 @@ Het info endpoint bevat informatie over de build. Hieronder zie je een voorbeeld
 ```json
 {
   "build": {
-    "version": "1.0.0.43d438a",
+    "version": "1.0.0.cc017df",
     "artifact": "core",
     "name": "core",
     "group": "com.infosupport",
-    "time": "2018-12-27T09:34:56.476Z"
+    "time": "2019-01-05T15:06:16.870Z"
   }
 }
 ```
