@@ -12,5 +12,6 @@ Als je alleen de code wil zien is die [hier](./realisatie/code) beschikbaar. Een
 - [Beheer](./beheer/README.md)
 - [Blog](./blog/README.md)
 - [Interview](./interview/README.md)
+- [ISKA](./ISKA/README.md)
 - [Ontwerp](./ontwerp/README.md)
 - [Realisatie](./realisatie/README.md)
