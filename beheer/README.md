@@ -48,16 +48,19 @@ Een pipeline is een groep taken die uitgevoerd moet worden om een doel te behale
 
 #### Build - API
 
-![Build pipeline IMG](./img/pipeline/build-api.png)
+![API Triggers IMG](./img/pipeline/bbb-api-triggers.png)
 
-De build pipeline doet een 4-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`.
+De build pipeline doet een 5-tal taken. Deze pipeline wordt uitgevoerd na elke commit op de `master`-branch of als er een succesvolle build is van de UI pipeline.
 
 1. Source code ophalen (een git checkout)
-2. Gradle wrapper starten met de taak `build`. Deze gaat per project een build actie doen. Om een build actie te mogen doen zal er eerst een test gedraaid worden, dit zijn unit tests. Deze worden dus automatisch gedraaid.
-3. De files kopieren die `**/*.war` en `**/*.sql` matchen, dit `core.war`, `facebook.war`, `slack.war`, `web.war` en de `schema.sql`. Deze worden als artifact gezien.
-4. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip`. Deze kan gebruikt worden in andere pipelines. Deze wordt gebruikt in de `BBB Full stack` pipeline.
+2. Artifacts downloaden van de UI pipeline. Deze worden geplaats in de map `$(Build.Repository.LocalPath)/web/src/main/resources/static/`. Dit betekend dus dat de artifacts meegeleverd worden aan het web project als static content.
+3. Gradle wrapper starten met de taak `build`. Deze gaat per project een build actie doen. Om een build actie te mogen doen zal er eerst een test gedraaid worden, dit zijn unit tests. Deze worden dus automatisch gedraaid.
+4. De files kopieren die `**/*.war` en `**/*.sql` matchen, dit zijn `core.war`, `facebook.war`, `slack.war`, `web.war` en de `schema.sql`. Deze worden als artifact gezien.
+5. De artifacts zippen en publishen, zo heb je aan het einde van de build een `drop.zip`. Deze kan gebruikt worden in andere pipelines. Deze wordt gebruikt in de `BBB Docker` pipeline.
 
-#### Build - WEB
+#### Build - UI
+
+![UI build pipeline IMG](./img/pipeline/bbb-ui.png)
 
 De build van een react project is anders dan van een gradle project. Dit project maakt gebruik van de node package manager. In het bestand `package.json` staan alle packages die gebruikt worden. Deze pipeline bestaat uit 5 taken. Als er een commit is gemaakt op de `master` branch zal deze pipeline automatisch draaien.
 
@@ -65,19 +68,18 @@ De build van een react project is anders dan van een gradle project. Dit project
 2. Een `npm install` doen. Dit installeerd alle packages gespecifieerd in de `package.json`.
 3. Een `npm build` voor het daadwerkelijk bouwen van het project. De output komt in de `build` folder.
 4. De files kopieren die in de `build` map staan.
-5. Het publishen van de artifact. Hier wordt ook een `drop.zip` van gemaakt. Deze kan ook gebruikt worden in andere pipelines. Ook deze wordt gebruikt in de `BBB Full stack` pipeline.
+5. Het publishen van de artifact. Hier wordt ook een `drop.zip` van gemaakt. Deze kan ook gebruikt worden in andere pipelines. Deze wordt gebruikt in de `BBB API` pipeline als statische content.
 
-#### Build - Full Stack
+#### Build - Docker
 
-![Full stack trigger](./img/pipeline/trigger-fullstack.png)
-Deze pipeline is voor de volledige applicatie. Omdat de volledige applicatie bestaat uit 2 aparte projecten is dit nodig. Deze pipeline heeft 6 stappen om uit te voeren. Het einddoel van deze pipeline is een docker image die gedraait kan worden in de Azure Cloud. Deze zal dan de combinatie van de 5 projecten hebben. In tegenstelling tot de andere pipelines die automatisch draaien als er een commit is gedaan op een master branch heb je hier de trigger van andere pipelines. Omdat deze pipeline afhankelijk is van de api en de web pipelines wordt deze automatisch gedraaid als er 1 van de 2 klaar is.
+![BBB Docker trigger](./img/pipeline/bbb-docker.png)
 
-1. Download de artifact van de api pipeline
-2. Download de artifact van de web pipeline
-3. De artifact van de api pipeline uitpakken
-4. De artifact van de web pipeline uitpakken
-5. De docker image bouwen genaamd `bbb`. Deze heeft de tag `latest` maar ook de git tags. Dit is zodat ik altijd een optie heb om een specifieke versie terug te zetten.
-6. De image pushen naar de repository. In azure kan je een eigen repository aanmaken. De repository die gebruikt wordt heet `bbbimages`.
+Deze pipeline is voor het package van de gebouwde applicatie. Deze pipeline is afhankelijk van de artifacts van de API pipeline. Zodra er een succesvolle build is geweest zal er een nieuwe docker image aangemaakt worden en gepusht naar de repository.
+
+1. Download de artifacts van de api pipeline
+2. De artifacts van de api pipeline uitpakken
+3. De docker image bouwen genaamd `bbb`. Deze heeft de tag `latest` maar ook de git tags. Dit is zodat ik altijd een optie heb om een specifieke versie terug te zetten.
+4. De image pushen naar de repository. In azure kan je een eigen repository aanmaken. De repository die gebruikt wordt heet `bbbimages`.
 
 #### Release
 
