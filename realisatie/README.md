@@ -1,10 +1,13 @@
 # Realisatie
 
-Er is uiteindelijk een werkend product opgeleverd. Er is een web interface, slack integratie, facebook integratie en een core gemaakt. Per project staat hieronder meer uitleg er over.
+Er is uiteindelijk een werkend product opgeleverd. Er is een web interface, slack integratie, facebook integratie (poc) en een core gemaakt. Per project staat hieronder meer uitleg er over.
 
 ## Code
 
-Alle code is terug te vinden in het [code](./code/) mapje. Hier zie je 2 git submodules, een voor de api (backend) en een voor de ui (frontend).
+Alle code is terug te vinden in het [code](./code/) mapje. Hier zie je 2 git submodules, een voor de api (backend) en een voor de ui (frontend). De UI kan je live zien in de [volgende omgeving](https://bbb-apiv2.azurewebsites.net/web/), hier moet je wel op inloggen. Er is een demo account aangemaakt waarop ingelogd kan worden, hier gelieve _geen_ bonus mee te geven.
+
+Gebruikersnaam: `fontys@bbbapi.onmicrosoft.com`\
+Wachtwoord: `Wachtwoord2`
 
 In de submodule `api` zie je een gradle project. Om het te builden kan er gebruik gemaakt worden van de gradle wrapper. Het commando hieronder is om het te builden. De wars staan dan in `<sub-project>/build/libs/` map.
 
