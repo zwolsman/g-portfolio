@@ -2,8 +2,8 @@
 
 ## General config
 
-Rpc: `http://ethvtnlhf-dns-reg1.westeurope.cloudapp.azure.com:8540/`\
-Private key: `39e5f75128e664ee13836b85f24f30c0c9983b0a9e6584895a7eb6fcc5f832b3`
+Rpc: `HTTP://127.0.0.1:8545`\
+Private key: `...` (check ganache)
 
 ## Web3
 
@@ -17,22 +17,12 @@ implementation ('org.web3j:core:4.0.0')
 
 ```kotlin
 object Web3Config {
-    private const val privateKey = "39e5f75128e664ee13836b85f24f30c0c9983b0a9e6584895a7eb6fcc5f832b3"
-    private const val rpcEndpoint = "http://ethvtnlhf-dns-reg1.westeurope.cloudapp.azure.com:8540/"
 
-
-    private val gasPrice = BigInteger.ZERO
-    private val gasLimit = BigInteger("6721975")
-
-    val gasProvider = StaticGasProvider(gasPrice, gasLimit)
-
-
-    val web3 =  Web3j.build(HttpService(rpcEndpoint))
+    val privatKey = "..." // Check ganache
+    val web3 =  Web3j.build(HttpService("HTTP://127.0.0.1:8545"))
     val credentials = Credentials.create(privateKey)
 
-    val contract by lazy {
-        IskaContract.load("0xd6f6a3bddf5c2b444f7156a98085ceddfb0df261", web3, credentials, gasProvider)
-    }
+    val contract = IskaContract.load("0xd6f6a3bddf5c2b444f7156a98085ceddfb0df261", web3, credentials, DefaultGasProvider())
 }
 ```
 
